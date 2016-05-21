@@ -179,7 +179,7 @@ var user = {
 
 
 var gett = function (req, res){
-
+data={};
  data["user4"] = user["user4"];
        console.log( data );
        res.end( JSON.stringify(data));
@@ -188,7 +188,8 @@ var gett = function (req, res){
 app.set('port', (process.env.PORT || 5000));
 
 app.post("*", handle_post );
-app.get( "*", handle_get ) ;
+//app.get( "*", handle_get ) ;
+app.get("/test",gett)
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

@@ -168,6 +168,23 @@ var handle_get = function (req, res) {
    // page( req, res, state, ts ) ;
 }
 
+var user = {
+   "user4" : {
+      "name" : "mohit",
+      "password" : "password4",
+      "profession" : "teacher",
+      "id": 4
+   }
+}
+
+
+var gett = function (req, res){
+
+ data["user4"] = user["user4"];
+       console.log( data );
+       res.end( JSON.stringify(data));
+
+}
 app.set('port', (process.env.PORT || 5000));
 
 app.post("*", handle_post );
